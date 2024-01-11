@@ -82,13 +82,19 @@
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                        <input type="text" class="form-control" id="name" placeholder="Your Name" @auth
+                                        value="{{ Auth::user()->name }}"
+                                        readonly
+                                    @endauth required>
                                         <label for="name">Your Name</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                        <input type="email" class="form-control" id="email" placeholder="Your Email" @auth
+                                        value="{{ Auth::user()->email }}"
+                                        readonly
+                                    @endauth required>
                                         <label for="email">Your Email</label>
                                     </div>
                                 </div>
