@@ -13,10 +13,10 @@
                 <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+212 7772 86149</p>
                 <p class="mb-2"><i class="fa fa-envelope me-3"></i>hamza.dakhche@gmail.com</p>
                 <div class="d-flex pt-2">
-                    <a class="btn btn-outline-light btn-social" href="https://wa.link/l6vxjy"><i class="fab fa-whatsapp"></i></a>
-                    <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/hamza.dakhche.77?locale=fr_FR"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/sk_dev101/"><i class="fab fa-instagram"></i></a>
-                    <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/in/hamza-dakhche-915792250/"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-light btn-social" target="_blank" href="https://wa.link/l6vxjy"><i class="fab fa-whatsapp"></i></a>
+                    <a class="btn btn-outline-light btn-social" target="_blank" href="https://www.facebook.com/hamza.dakhche.77?locale=fr_FR"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social" target="_blank" href="https://www.instagram.com/sk_dev101/"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-outline-light btn-social" target="_blank" href="https://www.linkedin.com/in/hamza-dakhche-915792250/"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
