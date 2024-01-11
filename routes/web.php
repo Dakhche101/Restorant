@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ContactController;
 
 /*
@@ -14,7 +16,7 @@ use App\Http\Controllers\ContactController;
 |
 */
 
-Route::get('/', function () {
+Route::get('', function () {
     return view('welcome');
 })->name('home');
 
@@ -37,7 +39,16 @@ Route::get('/contact',function(){
 
 Route::get('/booking',function(){
     return view('booking');
-})->name('booking');
+})->name('booking')->middleware('auth');
 
+Route::get('/edit_profile',function(){
+    return view('edit');
+})->name('edit_profile')->middleware('auth');
 
 Route::post('/contact',[ContactController::class,'store']);
+
+Auth::routes();
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+// Route::get('/dashbord',[])
