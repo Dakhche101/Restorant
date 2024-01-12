@@ -15,6 +15,19 @@ use App\Http\Controllers\ContactController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::middleware(['auth'])->group(function () {
+    Route::get('/booking',function(){
+        return view('booking');
+    })->name('booking');
+
+    Route::get('/edit_profile',function(){
+        return view('edit');
+    })->name('edit_profile');
+
+    Route::post('/editinfo',[HomeController::class,'editinfo'])->name('editinfo');
+    Route::post('/updatepwd',[HomeController::class,'updatePassword'])->name('updatePassword');
+});
+
 
 Route::get('', function () {
     return view('welcome');
@@ -37,18 +50,15 @@ Route::get('/contact',function(){
 })->name('contact');
 
 
-Route::get('/booking',function(){
-    return view('booking');
-})->name('booking')->middleware('auth');
-
-Route::get('/edit_profile',function(){
-    return view('edit');
-})->name('edit_profile')->middleware('auth');
 
 Route::post('/contact',[ContactController::class,'store']);
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('admin');
+
+Route::fallback(function () {
+    return view('notfound');
+});
 
 // Route::get('/dashbord',[])

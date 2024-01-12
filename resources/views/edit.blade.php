@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Restoran-profile</title>
     <link rel="icon" href="/restaurant.png" type="image/png">
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,7 +60,105 @@
                 </form>
             </div>
         </div>
+@if (session('message'))
+<script>
+    Swal.fire({
+  title: "Message",
+  text: "{{ session('message')}}",
+  icon: "success"
+});
+</script>
 
+
+@elseif (session('er'))
+<script>
+    Swal.fire({
+  title: "Message",
+  text: "{{ session('er')}}",
+  icon: "error"
+});
+</script>
+
+@endif
+
+
+{{-- editing profil --}}
+<div class="container-xxl py-3">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h5 class="section-title ff-secondary text-center text-primary fw-normal">Edit Profile</h5>
+        </div>
+        <div class="row g-4">
+
+            <div class="col-md-6 wow fadeIn" data-wow-delay="0.1s">
+                <div class="wow fadeInUp" data-wow-delay="0.2s">
+                    <form method="POST" action="{{ route('editinfo') }}">
+                        @csrf
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="name" placeholder="Your Name" name="name" value="{{ Auth::user()->name }}" required>
+                                    <label for="name">Your Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" id="email" placeholder="Your Email" name="email" value="{{ Auth::user()->email }}"required>
+                                    <label for="email">Your Email</label>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <button class="btn btn-primary w-40 py-3" type="submit">save</button>
+                                <button class="btn btn-danger w-40 py-3" type="reset">reset</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="wow fadeInUp" data-wow-delay="0.2s">
+                    <form method="POST" action="{{ route('updatePassword') }}">
+                        @csrf
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="password" class="form-control" id="password" placeholder="Your password" name="old_password" required>
+                                    <label for="password">Your Password</label>
+                                    @error('password_confirmation')
+                                        <p>{{ $message }}</p>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="password" class="form-control" id="newpassword" placeholder="New Password" name="password"  required>
+                                    <label for="newpassword">New Password</label>
+                                    @error('password_confirmation')
+                                        <p>{{ $message }}</p>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="password" class="form-control" id="confirmpassword" placeholder="Confirm Password" name="password_confirmation"  required>
+                                    <label for="confirmpassword">Confirm Password</label>
+                                    @error('password_confirmation')
+                                        <p>{{ $message }}</p>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary w-40 py-3" type="submit">save</button>
+                                <button class="btn btn-danger w-40 py-3" type="reset">reset</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 {{-- editing profil --}}
