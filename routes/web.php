@@ -28,6 +28,10 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/updatepwd',[HomeController::class,'updatePassword'])->name('updatePassword');
 });
 
+Route::middleware(['auth','admin'])->group(function () {
+    
+});
+
 
 Route::get('', function () {
     return view('welcome');
@@ -55,7 +59,7 @@ Route::post('/contact',[ContactController::class,'store']);
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('admin');
+Route::get('/dashboard', [HomeController::class, 'index'])->name('home')->middleware('admin');
 
 Route::fallback(function () {
     return view('notfound');

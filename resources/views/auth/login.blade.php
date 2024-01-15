@@ -63,6 +63,7 @@
                                     </a>
                                 @endif
                             </div>
+                            <a class="text-warning" href="{{ route('register') }}">Register</a>
                         </div>
                     </form>
                 </div>

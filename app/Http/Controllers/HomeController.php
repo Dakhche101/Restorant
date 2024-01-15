@@ -25,7 +25,7 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index(){
-        return view('home');
+        return view('admin.home');
     }
 
     public function checkEmail($x){
@@ -77,7 +77,7 @@ class HomeController extends Controller
                 $user->save();
                 return redirect()->back()->with('message', 'Password Updated Successfully');
             }
-            return redirect()->back()->with('er', 'confirm your password');
+            return redirect()->back()->with('er', 'Password Not Confirmed');
         } else {
             return redirect()->back()->with('er','Incorect password');
         }

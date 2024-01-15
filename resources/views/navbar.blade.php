@@ -41,7 +41,7 @@
 
                 <div class="bg-dark  dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                     @if (Auth::user()->user_type==="1")
-                        <a class="dropdown-item text-white" href="{{ url('/home') }}">Dashboard</a>
+                        <a class="dropdown-item text-white" href="{{ url('/dashboard') }}">Dashboard</a>
                     @endif
                     <a class="dropdown-item text-white" href="{{ route('edit_profile') }}">Profile</a>
                     <a class="dropdown-item text-white" href="{{ route('logout') }}"
