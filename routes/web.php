@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ContactController;
 
 /*
@@ -28,9 +29,16 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/updatepwd',[HomeController::class,'updatePassword'])->name('updatePassword');
 });
 
-Route::middleware(['auth','admin'])->group(function () {
-    
+Route::middleware([])->group(function () {
+
+
 });
+Route::get('/dashboard/contacts',[ContactController::class,'showContact'])->name('contactAdmin')->middleware('admin');
+Route::get('/dashboard/users',[AdminController::class,'ShowUsers'])->name('userAdmin')->middleware('admin');
+Route::post('/dashboard/contact/delete/{id}',[ContactController::class,'destroy'])->name('DeleteContactAdmin')->middleware('admin');
+Route::post('/dashboard/users/delete/{id}',[AdminController::class,'destroy'])->name('DeleteUserAdmin')->middleware('admin');
+Route::put('/dashboard/users/role/{id}',[AdminController::class,'role'])->name('roleUser')->middleware('admin');
+
 
 
 Route::get('', function () {

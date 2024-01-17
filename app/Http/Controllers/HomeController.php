@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Todo;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -25,7 +26,13 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index(){
-        return view('admin.home');
+        if(Auth::user()->user_type=='0'){
+            return redirect('/booking');
+        }else{
+            $todos=Todo::all();
+            return view('admin.home',compact('todos'));
+        }
+
     }
 
     public function checkEmail($x){

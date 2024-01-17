@@ -10,17 +10,7 @@
     @include('admin.style')
 
 
-    <style>
-        .home{
-            border:2px solid black;
-            width: 100%;
-            height: 100vh;
-        }
-        #sidebar{
-            height: 100vh;
-        }
 
-    </style>
 </head>
 <body>
     {{-- <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -34,5 +24,6 @@
         </div>
 
     </div>
+    @include('admin.scripts')
 </body>
 </html>
