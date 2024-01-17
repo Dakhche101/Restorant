@@ -109,8 +109,8 @@
                             </div>
 
                             <div class="col-12">
-                                <button class="btn btn-primary w-40 py-3" type="submit">save</button>
-                                <button class="btn btn-danger w-40 py-3" type="reset">reset</button>
+                                <button class="btn btn-primary w-40 py-3 rounded-3" type="submit">save</button>
+                                <button class="btn btn-danger w-40 py-3 rounded-3" type="reset">reset</button>
                             </div>
                         </div>
                     </form>
@@ -149,8 +149,8 @@
                                 </div>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-primary w-40 py-3" type="submit">save</button>
-                                <button class="btn btn-danger w-40 py-3" type="reset">reset</button>
+                                <button class="btn btn-primary w-40 py-3 rounded-3" type="submit">save</button>
+                                <button class="btn btn-danger w-40 py-3 rounded-3" type="reset">reset</button>
                             </div>
                         </div>
                     </form>

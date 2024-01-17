@@ -4,7 +4,7 @@
     <div class="position-sticky">
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link text-white active" href="#">
+          <a class="nav-link text-white active" href="{{ route('home') }}">
             <i class="bi bi-speedometer"></i> <span class="ms-2">Dashboard</span>
           </a>
         </li>
@@ -22,13 +22,13 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">
+          <a class="nav-link text-white" href="{{ route('userAdmin') }}">
             <i class="bi bi-person-lines-fill"></i>
             <span class="ms-2">Users</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">
+          <a class="nav-link text-white" href="{{ route('contactAdmin') }}">
             <i class="bi bi-envelope-at-fill"></i>
             <span class="ms-2">Contacts</span>
           </a>
@@ -49,7 +49,6 @@
             </form>
 
         </li>
-        <!-- Add more menu items as needed -->
       </ul>
     </div>
   </nav>
